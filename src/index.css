@@ -1,0 +1,163 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400&display=swap');
+
+:root {
+  /* Colors - Luxury Palette */
+  --bg-color: #f8f6f2;
+  --text-dark: #1a1a1a;
+  --accent-gold: #c6a77d;
+  --text-muted: #7d746b;
+
+  /* Typography Variables */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Manrope', sans-serif;
+  
+  /* Spacing Variables */
+  --section-padding: clamp(60px, 8vw, 120px) 6%;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Global Headings & Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* ==================================================
+   GLOBAL SECTION COMPONENT CLASSES
+   Use these in every page section to avoid collapsing
+================================================== */
+
+.narrative-section {
+  padding: var(--section-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Links & Buttons Reset */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.accent-color { color: var(--accent-gold); }
+/* ==================================================
+   MOBILE RESPONSIVE OVERRIDES
+================================================== */
+
+@media (max-width: 768px) {
+  /* Reduce padding for smaller screens to save space */
+  :root {
+    --section-padding: 60px 5%;
+  }
+
+  /* Adjust headings for mobile screens */
+  .section-title {
+    font-size: 1.8rem; /* Smaller, readable title */
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.65rem; /* Smaller subtitle for mobile */
+    margin-bottom: 2rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* Optional: Make body text slightly smaller on mobile */
+  body {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens: Further tighten spacing */
+  .narrative-section {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+/* ==================================================
+   TYPOGRAPHY & BODY TEXT STYLING
+================================================== */
+
+p {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem; /* Paragraphs overlap aagama irukka */
+  max-width: 700px;      /* Editorial width for better reading */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Specific Heading adjustments */
+h1 { font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 2rem; }
+h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+h4 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* Strong/Bold text styling for elegance */
+strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Mobile Adjustments for Typography */
+@media (max-width: 768px) {
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.4rem; }
+}

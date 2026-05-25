@@ -1,73 +1,38 @@
-import "./App.css";
-
-import Portfolio from "./components/portfolio/Portfolio";
-import Packages from "./components/packages/Packages";   // NEW
-import Video from "./components/video/Video";
-import Testimonials from "./components/testimonials/Testimonials";
-import Instagram from "./components/instagram/Instagram";
-import Blog from "./components/blog/Blog";
-import Footer from "./components/footer/Footer";
-import Gallery from "./pages/Gallery";
-import Location from "./components/location/Location";
-import Featured from "./components/featured/featured";
-import Services from "./components/Services/Services"
+import "./index.css";
+import Hero from './components/Hero/Hero';
+import StorySection from "./components/StorySection/StorySection";
+import FilmSection from "./components/FilmSection/FlimSection";
 import About from "./components/About/About";
-import Hero from "./components/Hero/Hero";
+import Testimonials from "./components/Testimonials/Testimonials";
+import Gallery from "./components/Gallery/Gallery";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Storytelling from "./components/StoryTelling/StoryTelling";
+import WeddingStory from "./components/WeddingStory/WeddingStory";
+import TenPartNarrative from "./components/TenPartNarrative/TenPartNarrative";
+import FAQ from "./components/FreequentQ/faq";
 
 function App() {
   return (
-    <>
-      {/* Home Section */}
-      <section id="home">
-        <Hero/>
-      </section>
+    <div className="app">
+      <Navbar/>
+      <Hero />
+      <StorySection/>
+      <Storytelling/>
+      <FilmSection/>
+      
+      <About/>
+      <WeddingStory/>
+      <TenPartNarrative/>
+      <Testimonials/>
+      <FAQ/>
 
-      {/* Services Section */}
-      <section id="services">
-         <Services/>
-      </section>
-
-       <section id="gallery">
-        <Gallery/>
-        </section>
-     
-
-      {/* Gallery Section */}
-      <section id="gallery">
-        <Featured/>
-      </section>
-
-      {/* About Section */}
-      <section id="about">
-        <About/>
-      </section>
-
-      {/* Video Section */}
-      <section id="packages">
-        <Packages />
-      </section>
-    
-
-      {/* Testimonials Section */}
-      <section id="testimonials">
-        <Testimonials />
-      </section>
-
-      {/* Instagram Section */}
-      <section id="instagram">
-        <Instagram />
-      </section>
-      <section id="location">
-        <Location/>
-      </section>
-   
-
-      {/* Contact Section */}
-      <section id="contact">
-        <Footer />
-      </section>
-   
-    </>
+      <Gallery/>
+      
+      
+      <Footer/>
+      {/* Adhukapram mattha sections inga varum */}
+    </div>
   );
 }
 

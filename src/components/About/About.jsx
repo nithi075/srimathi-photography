@@ -1,48 +1,56 @@
-import "./About.css";
-import mainImg from "../../assets/about1.png";
-import smallImg from "../../assets/about2.jpg";
+import { motion } from 'framer-motion';
+import './About.css';
 
-export default function About() {
+// Import your image
+import aboutImage from '../../assets/about1.png';
+
+const About = () => {
   return (
-    <section className="about" id="about">
-      
-      <div className="about-content">
-        <span className="sub-text">Our Philosophy</span>
-        <h2>Capturing the <br /> Soul of the Moment</h2>
-        
-        <p>
-          We believe that photography is not just about poses and lighting; 
-          it’s about the silent glances, the unbridled laughter, and the 
-          timeless connection between two souls. With a keen eye for detail, 
-          we turn your fleeting moments into eternal art.
-        </p>
+    <section className="about-section">
 
-        <button className="about-btn">Discover Our Story</button>
-      </div>
+      <div className="about-wrapper">
 
-      <div className="about-images">
-        {/* <div className="main-img-wrapper">
-          <img
-            src={mainImg}
-            alt="Wedding portrait"
-            className="main-img"
-          />
-        </div> */}
+        {/* Left Image */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="about-image"
+        >
+          <img src={aboutImage} alt="Photographer" />
+        </motion.div>
 
-        {/* Small overlapping image - placed bottom left for balance */}
-        {/* <img
-          src={smallImg}
-          alt="Candid moment"
-          className="small-img"
-        /> */}
+        {/* Right Content */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="about-content"
+        >
+          <p className="quote">
+            "Capturing the unseen poetry in every frame."
+          </p>
 
-        {/* Experience badge */}
-        {/* <div className="experience-badge">
-          <h3>08</h3>
-          <p>YEARS OF <br /> ARTISTRY</p>
-        </div> */}
+          <h2 className="about-title">
+            THE ARTIST BEHIND THE LENS
+          </h2>
+
+          <p className="about-text">
+            With a background in cinematic arts and a passion for timeless storytelling,
+            I document your wedding not just as an event, but as a living, breathing story.
+            My focus is on the quiet, intimate moments that define true love.
+          </p>
+
+          <button className="about-btn">
+            Read My Full Journey
+          </button>
+
+        </motion.div>
+
       </div>
 
     </section>
   );
-}
+};
+
+export default About;

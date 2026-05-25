@@ -1,112 +1,56 @@
-.footer-section {
-  background: #080808; /* Pure dark aesthetic */
-  padding: 80px 20px 40px;
-  color: #fff;
+.footer {
+  padding: 100px 40px;
+  background-color: #f8f6f2;
+  border-top: 1px solid #e8dfd3;
   text-align: center;
-  border-top: 1px solid rgba(212, 175, 55, 0.1);
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.3em;
+  color: #1a1a1a;
 }
 
-/* --- Top Section --- */
-.footer-logo {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 300;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  color: #F5F5F5;
+.footer-contact {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.25em;
+  color: #c6a77d;
+  text-decoration: none;
 }
 
-.footer-slogan {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #D4AF37; /* Gold accent */
-  margin-bottom: 50px;
-  opacity: 0.8;
-}
-
-/* --- Social Links --- */
-.footer-middle {
-  margin-bottom: 60px;
-}
-
-.footer-social-links {
+.social-links {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  gap: 40px; /* Wider gap for luxury look */
+  margin-bottom: 3rem;
 }
 
-.footer-social-links a {
-  font-family: "Montserrat", sans-serif;
+.social-links a {
+  text-decoration: none;
+  color: #1a1a1a;
   font-size: 0.7rem;
-  letter-spacing: 2px;
-  color: #A3A3A3;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.4s ease;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  transition: color 0.3s;
 }
 
-.footer-social-links a svg {
-  font-size: 1rem;
+.social-links a:hover {
+  color: #c6a77d;
 }
 
-.footer-social-links a:hover {
-  color: #D4AF37;
-  transform: translateY(-3px);
-}
-
-/* --- Bottom Section --- */
-.footer-line {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
-  margin-bottom: 30px;
-}
-
-.footer-copyright {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
+.copyright {
   font-size: 0.65rem;
-  color: #555;
-  letter-spacing: 1px;
-}
-
-.footer-legal {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-legal a {
-  color: #555;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.footer-legal a:hover {
-  color: #D4AF37;
+  color: #aaa;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 /* --- Mobile Responsive --- */
 @media (max-width: 768px) {
-  .footer-social-links {
-    gap: 25px;
-  }
-  
-  .footer-copyright {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
+  .footer { padding: 60px 20px; }
+  .social-links { gap: 20px; }
 }
