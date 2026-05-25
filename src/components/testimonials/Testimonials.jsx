@@ -1,70 +1,89 @@
 import { motion } from 'framer-motion';
 import './Testimonials.css';
 
+import testimonialImg from '../../assets/testimonial.jpg';
+
 const Testimonials = () => {
   return (
-<<<<<<< HEAD
     <section className="testimonials-section">
-      <h2 className="section-title">WORDS OF LOVE</h2>
+
+      <h2 className="section-title">
+        WORDS OF LOVE
+      </h2>
+
+      {/* Testimonial Cards */}
       <div className="testimonial-grid">
-        <motion.div 
+
+        <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
           className="testimonial-card"
         >
-          <p className="quote-text">"Their work isn't just photography; it's art. They captured the true essence of our day."</p>
-          <span className="client-name">— PRASANNA & HARINI</span>
+          <p className="quote-text">
+            "Their work isn't just photography; it's art.
+            They captured the true essence of our day."
+          </p>
+
+          <span className="client-name">
+            — PRASANNA & HARINI
+          </span>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="testimonial-card"
         >
-          <p className="quote-text">"An incredible storytelling experience. We felt so comfortable and the results are timeless."</p>
-          <span className="client-name">— MURALI & MEENA</span>
-        </motion.div>
-=======
-    <section className="testimonials">
-
-      <span className="tag">
-        WHAT CLIENTS SAY
-      </span>
-
-      <h2>
-        TESTIMONIALS
-      </h2>
-
-      <div className="testimonial-banner">
-
-        <img
-          src={testimonialImg}
-          alt="couple"
-        />
-
-        <div className="testimonial-overlay">
-
-          <h3>
-        Hariram & Keerthana
-
-          </h3>
-
-          <p>
-            Our wedding memories were captured so beautifully.
-            Every image feels timeless and emotional.
-            Truly a wonderful experience.
+          <p className="quote-text">
+            "An incredible storytelling experience.
+            We felt so comfortable and the results are timeless."
           </p>
 
-          {/* <button>
-            READ MORE
-          </button> */}
+          <span className="client-name">
+            — MURALI & MEENA
+          </span>
+        </motion.div>
+
+      </div>
+
+      {/* Banner Section */}
+      <section className="testimonials">
+
+        <span className="tag">
+          WHAT CLIENTS SAY
+        </span>
+
+        <h2>
+          TESTIMONIALS
+        </h2>
+
+        <div className="testimonial-banner">
+
+          <img
+            src={testimonialImg}
+            alt="couple"
+          />
+
+          <div className="testimonial-overlay">
+
+            <h3>
+              Hariram & Keerthana
+            </h3>
+
+            <p>
+              Our wedding memories were captured so beautifully.
+              Every image feels timeless and emotional.
+              Truly a wonderful experience.
+            </p>
+
+          </div>
 
         </div>
 
->>>>>>> e68762a38603c19e98a222fc313ea7798b938458
-      </div>
+      </section>
+
     </section>
   );
 };

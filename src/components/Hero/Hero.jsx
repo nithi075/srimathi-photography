@@ -1,29 +1,30 @@
 import { motion } from 'framer-motion';
 import './Hero.css';
 
-// Import your background image
 import heroImage from '../../assets/hero1.jpg';
+import logoimg from '../../assets/logo.png';
 
 const Hero = () => {
   return (
-    <section className="hero">
     <section className="hero" id="home">
-      {/* Navbar - Original logic with premium CSS */}
+
+      {/* Navbar */}
       <nav className="navbar">
         <div className="logo">
           <img src={logoimg} alt="Golden Lights Photography Logo" />
         </div>
+      </nav>
 
-      {/* Background Image Container */}
+      {/* Background Image */}
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 10, ease: "linear" }}
         className="hero-bg"
         style={{ backgroundImage: `url(${heroImage})` }}
-      ></motion.div>
+      />
 
-      {/* Dark Overlay */}
+      {/* Overlay */}
       <div className="hero-overlay"></div>
 
       {/* Content */}
@@ -44,6 +45,6 @@ const Hero = () => {
 
     </section>
   );
-};
+}
 
 export default Hero;
