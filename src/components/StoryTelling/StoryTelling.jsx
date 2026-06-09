@@ -1,86 +1,101 @@
 import { motion } from "framer-motion";
-import "./Storytelling.css";
+import { Link } from "react-router-dom";
+import "./StoryTelling.css";
 
-// Import your images
-import maternityMain from "../../assets/img1.jpg";
-import maternityFloat from "../../assets/img2.jpg";
-
-import newbornMain from "../../assets/img3.jpg";
-import newbornFloat from "../../assets/img4.jpg";
+import maternity from "../../assets/img1.jpg";
+import prewedding from "../../assets/img3.jpg";
+import wedding from "../../assets/img2.jpg";
+import bride from "../../assets/bride1.jpg"; // Add your bride image
 
 const photographyData = [
   {
     id: 1,
-    mini: "Maternity Photography",
+    category: "Maternity",
     title: "THE BEAUTY OF WAITING",
-    desc: "I capture the radiant journey of motherhood, documenting the quiet strength and anticipation of your most precious chapter in a timeless, artistic way.",
-    
-    imageMain: maternityMain,
-    imageFloat: maternityFloat,
+    desc: "Capturing the radiant journey of motherhood with artistic, timeless portraits.",
+    image: maternity,
+    slug: "maternity"
   },
 
-{
-  id: 2,
+  {
+    id: 2,
+    category: "Pre-Wedding",
+    title: "BEFORE THE FOREVER",
+    desc: "Turning your love story into cinematic memories filled with romance and emotion.",
+    image: prewedding,
+    slug: "pre-wedding"
+  },
 
-  mini: "Pre Wedding Shoot",
+  {
+    id: 3,
+    category: "Wedding",
+    title: "THE SACRED BOND",
+    desc: "Fine art wedding photography that documents every ritual and raw emotion.",
+    image: wedding,
+    slug: "wedding"
+  },
 
-  title: "BEFORE THE FOREVER",
-
-  desc: "Every glance, every laugh, and every stolen moment before the wedding day is captured beautifully, turning your love story into timeless memories filled with romance and emotion.",
-
-  imageMain: newbornMain,
-  imageFloat: newbornFloat,
-}
+  {
+    id: 4,
+    category: "Bride",
+    title: "THE BRIDAL ELEGANCE",
+    desc: "Capturing every detail, emotion, and timeless beauty of the bride before she begins her new journey.",
+    image: bride,
+    slug: "bride"
+  }
 ];
 
-const StoryBlock = ({ item, isReverse }) => (
+const StoryBlock = ({ item, index }) => (
   <motion.div
-    className={`story-block ${isReverse ? "reverse" : ""}`}
+    className={`story-block ${index % 2 !== 0 ? "reverse" : ""}`}
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
   >
-    
-    {/* Images */}
     <div className="story-image">
-
-      <img src={item.imageMain} alt={item.title} />
-
-   
-
+      <img src={item.image} alt={item.title} />
     </div>
 
-    {/* Text */}
     <div className="story-text">
-      <div className="story-mini">
-        {item.mini}
-      </div>
+
+      <span className="story-category">
+        {item.category}
+      </span>
 
       <h2>{item.title}</h2>
 
       <p>{item.desc}</p>
 
-      <a href="/contact" className="book-btn">
-        Book Your Session
-      </a>
-    </div>
+      <div className="btn-group">
+        <Link
+          to={`/gallery/${item.slug}`}
+          className="view-more"
+        >
+          View More
+        </Link>
+      </div>
 
+    </div>
   </motion.div>
 );
 
-const Storytelling = () => {
+export default function Storytelling() {
   return (
     <section className="storytelling-section">
+
+      <h2 className="section-title">
+        Our Services
+      </h2>
+
       {photographyData.map((item, index) => (
         <StoryBlock
           key={item.id}
           item={item}
-          isReverse={index % 2 !== 0}
+          index={index}
         />
       ))}
+
     </section>
   );
-};
-
-export default Storytelling;
+}

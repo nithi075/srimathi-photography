@@ -1,41 +1,51 @@
 import { motion } from 'framer-motion';
 import './Hero.css';
-
-// Import background image
 import heroImage from '../../assets/hero1.jpg';
 
 const Hero = () => {
   return (
     <section className="hero" id="home">
-
-      {/* Background Image */}
-      <motion.div
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 10, ease: "linear" }}
+      <div
         className="hero-bg"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
 
-      {/* Overlay */}
-      <div className="hero-overlay"></div>
+      <div className="hero-overlay" />
 
-      {/* Content */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
         className="hero-content"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2 }}
       >
-        <p className="hero-subtitle">
-          CRAFTING TIMELESS MEMORIES
-        </p>
+        <span className="journal-tag">THE VISUAL JOURNAL • VOL. 01</span>
 
         <h1 className="hero-title">
-          DEV STUDIOZ
+          DEV
+          <br />
+          STUDIOZ
         </h1>
+
+        <div className="journal-line"></div>
+
+        <p className="hero-quote">
+          Documenting stories through light, emotion, and timeless frames.
+          Every photograph becomes a page in an unfolding journal.
+        </p>
+
+        <button
+          className="cta-button"
+          onClick={() =>
+            document
+              .getElementById('portfolio')
+              ?.scrollIntoView({ behavior: 'smooth' })
+          }
+        >
+          Explore Journal
+        </button>
       </motion.div>
 
+      <div className="journal-date">EST. 2025</div>
     </section>
   );
 };

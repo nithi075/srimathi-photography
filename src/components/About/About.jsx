@@ -1,21 +1,24 @@
-import { motion } from 'framer-motion';
-import './About.css';
+import { motion } from "framer-motion";
+import "./About.css";
 
-// Import your video
-import aboutVideo from '../../assets/about-video.mp4';
+import aboutVideo from "../../assets/about-video.mp4";
 
 const About = () => {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
+
+      <div className="about-label">
+        <span>THE STORYTELLER</span>
+      </div>
 
       <div className="about-wrapper">
 
-        {/* Left Video */}
         <motion.div
+          className="about-image"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="about-image"
         >
           <video
             src={aboutVideo}
@@ -25,37 +28,51 @@ const About = () => {
             playsInline
             className="about-video"
           />
+
+          <div className="video-badge">
+            EST. 2025
+          </div>
         </motion.div>
 
-        {/* Right Content */}
         <motion.div
+          className="about-content"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="about-content"
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <p className="quote">
-            "Capturing the unseen poetry in every frame."
-          </p>
+          <span className="about-mini">
+            WEDDING • MATERNITY • PRE-WEDDING
+          </span>
 
           <h2 className="about-title">
-            THE ARTIST BEHIND THE LENS
+            Every Frame Holds
+            <br />
+            A Story Worth Remembering
           </h2>
 
-          <p className="about-text">
-            With a background in cinematic arts and a passion for timeless storytelling,
-            I document your wedding not just as an event, but as a living, breathing story.
-            My focus is on the quiet, intimate moments that define true love.
+          <p className="quote">
+            “Capturing the unseen poetry in every frame.”
           </p>
 
-          <button className="about-btn">
-            Read My Full Journey
-          </button>
+          <p className="about-text">
+            Photography is more than preserving moments.
+            It is about documenting emotions, relationships,
+            and the quiet beauty that often goes unnoticed.
+          </p>
 
+          <p className="about-text">
+            My approach blends cinematic storytelling with
+            timeless editorial aesthetics, creating imagery
+            that feels honest, elegant, and deeply personal.
+          </p>
+
+          <a href="#contact" className="about-btn">
+            Let's Create Together
+          </a>
         </motion.div>
 
       </div>
-
     </section>
   );
 };

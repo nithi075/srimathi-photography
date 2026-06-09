@@ -1,29 +1,28 @@
-/* --- Story Section Container --- */
 .story-section {
-  padding: 100px 50px;
-  background-color: #f8f6f2;
-}
-
-.section-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 5vw, 3rem);
-  text-align: center;
-  margin-bottom: 5rem;
-  letter-spacing: 0.1em;
+  padding: 120px 20px;
+  background-color: #fcfcfc; /* Journal background */
   color: #1a1a1a;
 }
 
-/* --- Grid Layout --- */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 6rem;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 .story-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Asymmetrical Editorial Ratio */
-  gap: 3rem;
-  max-width: 1200px;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
   margin: 0 auto;
   align-items: start;
 }
 
-/* --- Card Styles --- */
 .story-card {
   display: flex;
   flex-direction: column;
@@ -31,171 +30,226 @@
 
 .image-wrapper {
   width: 100%;
-  height: 550px; /* Tall editorial height */
-  margin-bottom: 1.5rem;
+  height: 600px;
+  margin-bottom: 2rem;
   overflow: hidden;
-  background-color: #e8dfd3;
+  background-color: #eee;
+  position: relative;
+}
+
+/* Edit: Second card-ai chinna size-ah matha */
+.story-card:nth-child(2) .image-wrapper {
+  height: 450px;
+  margin-top: 100px; /* Editorial staggered effect */
 }
 
 .image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.story-card:hover .image-wrapper img {
-  transform: scale(1.05); /* Subtle zoom effect */
+.story-card:hover img {
+  transform: scale(1.03);
 }
 
 .story-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
+  font-weight: 500;
 }
 
 .location {
+  font-family: 'Georgia', serif;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: #c6a77d;
-  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: #888;
 }
-/* Update this in StorySection.css */
+
+/* --- Mobile Responsive (Refined for Journal Look) --- */
 @media (max-width: 768px) {
-  .story-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center la ellam vara */
-    width: 100%;
-    padding: 0 15px;
-    box-sizing: border-box;
-  }
+  .story-section { padding: 80px 20px; }
   
-  .story-card {
-    width: 100%; /* Full width */
-    margin-bottom: 30px;
-  }
-}
-/* --- Mobile Responsive (Refined) --- */
-@media (max-width: 768px) {
-  .story-section {
-    padding: 60px 20px;
-  }
+  .section-title { margin-bottom: 4rem; }
 
   .story-grid {
-    grid-template-columns: 1fr; /* Stack vertically on mobile */
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  .image-wrapper {
-    height: 400px; /* Slightly shorter for mobile screens */
+  .story-card:nth-child(2) .image-wrapper {
+    height: 400px;
+    margin-top: 0; /* Mobile-la stagger-ai remove panniten */
   }
 
-  .section-title {
-    margin-bottom: 3rem;
-  }
+  .image-wrapper { height: 450px; }
+
+  .story-card h3, .location { text-align: center; }
 }
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* ==========================
+   TABLET
+========================== */
 
 @media (max-width: 768px) {
 
   .story-section {
-
     padding: 80px 20px;
-
-    overflow: hidden;
   }
-
-  /* TITLE */
 
   .section-title {
-
-    font-size: 2rem;
-
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
     margin-bottom: 3rem;
-
     line-height: 1.2;
-
-    letter-spacing: 0.08em;
   }
-
-  /* GRID */
 
   .story-grid {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 50px;
-
-    width: 100%;
-
-    max-width: 100%;
-
-    padding: 0;
-
-    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  /* CARD */
-
-  .story-card {
-
-    width: 100%;
+  /* Remove stagger effect */
+  .story-card:nth-child(2) .image-wrapper {
+    margin-top: 0;
+    height: 380px;
   }
-
-  /* IMAGE */
 
   .image-wrapper {
-
-    width: 100%;
-
-    height: 420px;
-
+    height: 450px;
     margin-bottom: 1.2rem;
-
-    overflow: hidden;
   }
-
-  .image-wrapper img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-  }
-
-  /* TEXT */
 
   .story-card h3 {
-
-    font-size: 1.2rem;
-
-    line-height: 1.3;
-
-    margin-bottom: 0.7rem;
-
     text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
   }
 
   .location {
-
-    display: block;
-
     text-align: center;
-
-    font-size: 0.72rem;
-
-    letter-spacing: 0.22em;
-
-    line-height: 1.7;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
   }
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 480px) {
+
+  .story-section {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  .story-grid {
+    gap: 2.5rem;
+  }
+
+  .image-wrapper {
+    height: 320px;
+    margin-bottom: 1rem;
+  }
+
+  .story-card:nth-child(2) .image-wrapper {
+    height: 280px;
+  }
+
+  .story-card h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .location {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+
+/* ==========================
+   SMALL DEVICES
+========================== */
+
+@media (max-width: 360px) {
+
+  .story-section {
+    padding: 50px 12px;
+  }
+
+  .image-wrapper {
+    height: 280px;
+  }
+
+  .story-card:nth-child(2) .image-wrapper {
+    height: 240px;
+  }
+
+  .story-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .location {
+    font-size: 0.6rem;
+  }
+}
+/* ... Previous styles ... */
+
+.story-info {
+  margin-top: 1.5rem;
+  text-align: left; /* Left align for journal aesthetic */
+}
+
+.category {
+  font-family: 'Georgia', serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #a89065;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.view-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'Georgia', serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.view-link:hover {
+  letter-spacing: 0.3em;
+  color: #a89065;
+  border-bottom-color: #a89065;
+}
+
+/* Journal Grid adjustment */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Equal columns for clean look */
+  gap: 5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .story-grid { grid-template-columns: 1fr; gap: 4rem; }
+  .story-info { text-align: center; }
+  .view-link { margin: 1rem auto 0; }
 }

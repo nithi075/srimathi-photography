@@ -1,106 +1,81 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import "./FilmSection.css";
 
-// Import your videos
+// Import your BTS videos
 import video1 from "../../assets/video1.mp4";
 import video2 from "../../assets/video2.mp4";
-import video3 from "../../assets/video1.mp4";
-import video4 from "../../assets/video2.mp4";
+import video3 from "../../assets/video3.mp4";
+import video4 from "../../assets/video4.mp4";
 
 const FilmSection = () => {
 
   const videos = [
     {
-      title: "THE NARRATIVE I",
+      title: "BTS - Wedding Shoot",
       video: video1,
     },
 
     {
-      title: "THE NARRATIVE II",
+      title: "BTS - Maternity Session",
       video: video2,
     },
 
     {
-      title: "THE NARRATIVE III",
+      title: "BTS - Couple Moments",
       video: video3,
     },
 
     {
-      title: "THE NARRATIVE IV",
+      title: "BTS - Creative Direction",
       video: video4,
     },
   ];
 
-  const [index, setIndex] = useState(0);
-
-  // Auto Slide
-  useEffect(() => {
-
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % videos.length);
-    }, 4000);
-
-    return () => clearInterval(timer);
-
-  }, []);
-
   return (
 
-    <section className="film-section">
+    <section className="bts-film-section">
 
-      <h2 className="section-title">
-        CINEMATIC FILMS
+      <h2 className="bts-film-title">
+        BEHIND THE SCENES
       </h2>
 
-      <div className="film-container">
+      <div className="bts-film-grid">
 
-        <AnimatePresence mode="wait">
+        {videos.map((item, index) => (
 
-          <motion.div
+          <div
             key={index}
-            className="video-card"
-
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-
-            transition={{ duration: 0.8 }}
+            className="bts-film-card"
           >
 
-            {/* Video */}
             <video
-              src={videos[index].video}
+              src={item.video}
               autoPlay
               muted
               loop
               playsInline
-              className="bg-video"
+              className="bts-film-video"
             />
 
-            {/* Overlay */}
-            <div className="video-overlay"></div>
+            <div className="bts-film-overlay"></div>
 
-            {/* Play Icon */}
-            <div className="play-btn">
+            <div className="bts-film-play-btn">
 
               <svg
                 viewBox="0 0 24 24"
                 fill="white"
-                width="30"
-                height="30"
+                width="28"
+                height="28"
               >
                 <path d="M8 5v14l11-7z" />
               </svg>
 
             </div>
 
-            {/* Title */}
-            <p>{videos[index].title}</p>
+            <p>{item.title}</p>
 
-          </motion.div>
+          </div>
 
-        </AnimatePresence>
+        ))}
 
       </div>
 
