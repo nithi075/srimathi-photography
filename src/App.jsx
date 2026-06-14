@@ -8,7 +8,7 @@ import Testimonials from './components/testimonials/Testimonials'
 import Contact from './components/Contact/Contact'
 import Instagram from './components/instagram/Instagram'
 import FAQ from './components/FreequentQ/faq'
-import Footer from './components/Footer/Footer'
+import Footer from './components/footer/footer'
 import Portfolio from './components/Portfolio/Portfolio'
 import ScrollToTop from './components/ScrollToTop'
 
