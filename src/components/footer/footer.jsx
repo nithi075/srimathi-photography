@@ -189,12 +189,12 @@ return ( <footer className="footer"> <div className="footer__top">
         </a>
       </div>
 
-      <a href="tel:+918939700777" className="footer__phone">
-        +91 89397 00777
+ <a href="tel:+60165033804" className="footer__phone">
+        +60 16-5033804
       </a>
 
       <a
-        href="https://wa.me/918939700777"
+        href="https://wa.me/60165033804"
         className="footer__whatsapp"
         target="_blank"
         rel="noopener noreferrer"
@@ -208,7 +208,7 @@ return ( <footer className="footer"> <div className="footer__top">
 
   <div className="footer__bottom">
     <p className="footer__copyright">
-      © 2026 ZEROWATTS PHOTOGRAPHY
+      © 2026 SRIMATHI PHOTOGRAPHY
     </p>
   </div>
 </footer>
